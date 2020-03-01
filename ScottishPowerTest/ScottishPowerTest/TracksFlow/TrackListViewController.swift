@@ -38,6 +38,13 @@ class TrackListViewController: UIViewController, CoordinatedViewController {
         self.viewModel = TracksListViewModel(delegate: self)
         self.viewModel?.refreshData()
         
+        NotificationCenter.default.addObserver(self, selector:#selector(userChangedTextSize(notification:)), name:UIContentSizeCategory.didChangeNotification, object: nil)
+        
+    }
+    
+    @objc func userChangedTextSize(notification: Notification) {
+        
+        self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
     func configureCollectionView() {

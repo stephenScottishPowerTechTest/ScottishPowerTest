@@ -76,9 +76,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="artistLabel" destination="bl4-KP-eJT" id="K9w-aT-9xa"/>
+                <outlet property="artistLabel" destination="MQE-Pa-HYt" id="2aW-uM-d81"/>
                 <outlet property="imageView" destination="8Lg-a1-UlJ" id="YCF-Yu-pdv"/>
-                <outlet property="trackNameLabel" destination="MQE-Pa-HYt" id="wtt-X1-O30"/>
+                <outlet property="trackNameLabel" destination="bl4-KP-eJT" id="s6r-OD-pxJ"/>
                 <outlet property="trackPriceLabel" destination="a8r-G0-vZR" id="aad-hh-7qF"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
