@@ -28,6 +28,7 @@
 		52AD10CB240C21C400D29CAD /* TrackDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10CA240C21C400D29CAD /* TrackDetailsViewModel.swift */; };
 		52AD10D4240C2B9D00D29CAD /* UIFont+Bold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10D3240C2B9D00D29CAD /* UIFont+Bold.swift */; };
 		52AD10D6240C2E1500D29CAD /* DurationString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10D5240C2E1500D29CAD /* DurationString.swift */; };
+		52AD10D8240C3A2900D29CAD /* DurationStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10D7240C3A2900D29CAD /* DurationStringTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		52AD10CA240C21C400D29CAD /* TrackDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewModel.swift; sourceTree = "<group>"; };
 		52AD10D3240C2B9D00D29CAD /* UIFont+Bold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Bold.swift"; sourceTree = "<group>"; };
 		52AD10D5240C2E1500D29CAD /* DurationString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationString.swift; sourceTree = "<group>"; };
+		52AD10D7240C3A2900D29CAD /* DurationStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationStringTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				5272C7E7240BFA3100B730B8 /* ScottishPowerTestTests.swift */,
 				52AD10C6240C19BB00D29CAD /* TrackListModelTest.swift */,
 				5272C7E9240BFA3100B730B8 /* Info.plist */,
+				52AD10D7240C3A2900D29CAD /* DurationStringTests.swift */,
 			);
 			path = ScottishPowerTestTests;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			files = (
 				5272C7E8240BFA3100B730B8 /* ScottishPowerTestTests.swift in Sources */,
 				52AD10C7240C19BB00D29CAD /* TrackListModelTest.swift in Sources */,
+				52AD10D8240C3A2900D29CAD /* DurationStringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
