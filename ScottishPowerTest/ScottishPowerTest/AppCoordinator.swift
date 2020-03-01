@@ -50,7 +50,7 @@ extension AppCoordinator: UINavigationControllerDelegate {
 //        case is ExampleViewController:
 //            childDidFinish(exampleCoordinatorKey)
 //        default:
-//            Instrumentation.shared.logDebug("popped \(fromViewController) but we aren't coordinating that from here")
+//            debugLog("popped \(fromViewController) but we aren't coordinating that from here")
 //        }
     }
 }
