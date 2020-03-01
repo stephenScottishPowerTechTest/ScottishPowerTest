@@ -30,3 +30,7 @@ As for the spacing, I'm currently working in a team with very strict spacing lin
 I haven't written any UI tests due to time constraints it would be fairly easy to record some scrolling and tapping on the app for that. 
 
 As for Unit tests. I've unit tested some of the helpers and utilities where appropriate, but haven't gone into unit testing the view controllers or actual network calls. I would've done more but I thought the five hours to make a decent stab at this would've left me without some functionality if I wrote more tests. 
+
+I would perhaps use a split view for iPad screens as the full width list is unnecessary. That or I'd use multi column layout on larger devices.
+
+I've also turned off landscape on phones as I didn't have all simulators downloaded, nor smaller device sizes to test on. I know the image view in the details won't work due to being pinned to the sides with an aspect ratio. So I'd work on that too, if given more time. 
