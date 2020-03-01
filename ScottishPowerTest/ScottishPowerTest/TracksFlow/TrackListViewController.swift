@@ -26,7 +26,14 @@ class TrackListViewController: UIViewController, CoordinatedViewController {
         
         super.viewDidLoad()
         self.title = NSLocalizedString("Rock Tracks", comment: "Rock Tracks")
-        self.view.backgroundColor = UIColor.lightGray
+    
+        if #available(iOS 13.0, *) {
+            self.view.backgroundColor = UIColor.secondarySystemBackground
+            collectionView.backgroundColor = UIColor.secondarySystemBackground //Taken by dropper from Wireframes
+        } else {
+            self.view.backgroundColor = UIColor(red:0.95, green:0.96, blue:0.96, alpha:1.00)
+            collectionView.backgroundColor = UIColor(red:0.95, green:0.96, blue:0.96, alpha:1.00)
+        }
         self.configureCollectionView()
         self.viewModel = TracksListViewModel(delegate: self)
         self.viewModel?.refreshData()
@@ -44,8 +51,6 @@ class TrackListViewController: UIViewController, CoordinatedViewController {
                                                      right: cellInset)
         
         collectionView.collectionViewLayout = customFlowLayout
-        
-        collectionView.backgroundColor = UIColor(red:0.95, green:0.96, blue:0.96, alpha:1.00) //Taken by dropper from Wireframes
         collectionView.contentInsetAdjustmentBehavior = .always
         collectionView.delegate = self
         collectionView.dataSource = self

@@ -21,6 +21,7 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var moreDetailsButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     static let currencyFormatter = NumberFormatter.USCurrencyFormatter()
     
@@ -42,14 +43,36 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
         self.styleView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func styleView() {
         
         self.artistLabel.font = UIFont.preferredFont(forTextStyle: .body).bold()
         self.stackView.setCustomSpacing(16.0, after: self.trackPriceLabel)
         self.moreDetailsButton.layer.cornerRadius = 8.0
         self.moreDetailsButton.layer.masksToBounds = true
-        self.moreDetailsButton.backgroundColor = UIColor.lightGray
+        self.moreDetailsButton.backgroundColor = UIApplication.shared.keyWindow?.tintColor //This is a poor way of getting tint colour. I'd get it from a theme class or struct.
         self.moreDetailsButton.tintColor = UIColor.darkGray
+        
+        //Done this in order to see the button on contrasting background views
+        self.backButton.layer.masksToBounds = true
+        self.backButton.layer.cornerRadius = 8.0
+        self.backButton.backgroundColor = UIColor(white: 0.4, alpha: 0.1)
+    }
+    
+    @IBAction func backTapped(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func configureWithTrackDetails(trackDetails: TrackDetails) {
@@ -61,16 +84,27 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
         self.releaseDateLabel.text = TrackDetailsViewController.dateFormatter.string(from: trackDetails.releaseDate)
         self.imageView.image = ImageManager.image(forURLString: trackDetails.artworkUrl100)
         
-        
+        self.downloadBetterImage()
     }
     
     private func downloadBetterImage() {
         
         //Scale to the width as that's the longest dimension
         let width = self.view.bounds.width
-        let dimensionRoundedUp = 100 * Int(round(width / 100.0))
-        
-        debugPrint("Rounded up")
+        if let biggerURL = self.viewModel?.biggerImageURL(width: Double(width)) {
+            
+            if let newImage = ImageManager.image(forURLString: biggerURL) {
+                
+                DispatchQueue.ensureMainThread {
+                    
+                    self.imageView.image = newImage
+                }
+                
+            } else {
+                
+                self.imageView.loadImage(fromURLString: biggerURL)
+            }
+        }
     }
     
     public func bind(trackDetails: TrackDetails) {

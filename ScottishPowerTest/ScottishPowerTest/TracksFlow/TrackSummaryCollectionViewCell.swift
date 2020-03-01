@@ -37,8 +37,16 @@ class TrackSummaryCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
-        //Color gotten by using a droplet picker on the wireframes border.
-        self.contentView.layer.borderColor = UIColor(red:0.88, green:0.89, blue:0.89, alpha:1.00).cgColor
+        
+        if #available(iOS 13.0, *) {
+            self.contentView.layer.borderColor = UIColor.separator.cgColor
+        } else {
+            
+            //Color gotten by using a droplet picker on the wireframes border. I know this isn't final colours as it's just wireframes
+            self.contentView.layer.borderColor = UIColor(red:0.88, green:0.89, blue:0.89, alpha:1.00).cgColor
+        }
+        
+        
         self.contentView.layer.borderWidth = 1.0
     }
     

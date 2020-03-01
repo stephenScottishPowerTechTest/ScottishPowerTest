@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
+        self.window?.tintColor = UIColor(red:0.64, green:0.73, blue:0.33, alpha:1.00) //Scottish power colours
         let coordinator = AppCoordinator(window: window)
         self.appCoordinator = coordinator
         self.appCoordinator?.start()

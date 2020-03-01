@@ -19,4 +19,13 @@ class TrackDetailsViewModel {
         
         self.trackDetails = details
     }
+    
+    //using double to avoid having to import UIKit just for this CGFloat
+    func biggerImageURL(width: Double) -> String {
+        
+        let dimensionRoundedUp = 100 * Int(ceil(width / 100))
+
+        return trackDetails.artworkUrl100.replacingOccurrences(of: "source/100x100bb.jpg",
+                                                 with: "source/\(dimensionRoundedUp)x\(dimensionRoundedUp)bb.jpg")
+    }
 }
