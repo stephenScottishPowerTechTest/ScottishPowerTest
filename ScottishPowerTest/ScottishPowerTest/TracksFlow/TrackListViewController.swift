@@ -10,7 +10,8 @@ import UIKit
 
 class TrackListViewController: UIViewController, CoordinatedViewController {
     
-    //constants
+    let customFlowLayout = DynamicSizingFlowLayout()
+    
     let cellSpacing = CGFloat(24)
     let cellInset = CGFloat(16)
     let cellIdentifier = String(describing: TrackSummaryCollectionViewCell.self)
@@ -26,7 +27,17 @@ class TrackListViewController: UIViewController, CoordinatedViewController {
     }
     
     func configureCollectionView() {
-                
+      
+        customFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        customFlowLayout.minimumInteritemSpacing = cellSpacing
+        customFlowLayout.minimumLineSpacing = cellSpacing
+        customFlowLayout.sectionInset = UIEdgeInsets(top: cellSpacing,
+                                                     left: cellInset,
+                                                     bottom: cellInset,
+                                                     right: cellInset)
+        
+        collectionView.collectionViewLayout = customFlowLayout
+        
         collectionView.contentInsetAdjustmentBehavior = .always
         collectionView.delegate = self
         collectionView.dataSource = self
