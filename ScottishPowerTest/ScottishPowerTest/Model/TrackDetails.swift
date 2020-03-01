@@ -8,7 +8,16 @@
 
 import Foundation
 
-struct TrackDetails: Codable {
+//All that's required for the list of cells
+protocol TrackSummary {
+    
+    var artistName: String { get }
+    var trackName: String { get }
+    var artworkUrl100: String { get }
+    var trackPrice: Decimal { get }
+}
+
+struct TrackDetails: Codable, TrackSummary {
     
     var artistName: String
     var trackName: String

@@ -21,12 +21,7 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
     
     @IBOutlet weak var moreDetailsButton: UIButton!
     
-    static let currencyFormatter: NumberFormatter = {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.locale = Locale(identifier: "en_US") // This is an assumption based on the API returning american prices.
-        return numberFormatter
-    }()
+    static let currencyFormatter = NumberFormatter.USCurrencyFormatter()
     
     static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()

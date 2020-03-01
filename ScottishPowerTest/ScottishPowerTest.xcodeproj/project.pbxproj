@@ -29,6 +29,10 @@
 		52AD10D4240C2B9D00D29CAD /* UIFont+Bold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10D3240C2B9D00D29CAD /* UIFont+Bold.swift */; };
 		52AD10D6240C2E1500D29CAD /* DurationString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10D5240C2E1500D29CAD /* DurationString.swift */; };
 		52AD10D8240C3A2900D29CAD /* DurationStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10D7240C3A2900D29CAD /* DurationStringTests.swift */; };
+		52AD10DB240C3ECC00D29CAD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10DA240C3ECC00D29CAD /* NetworkManager.swift */; };
+		52AD10E1240C485400D29CAD /* TracksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E0240C485400D29CAD /* TracksListViewModel.swift */; };
+		52AD10E3240C4C9000D29CAD /* NumberFormatter+USCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E2240C4C9000D29CAD /* NumberFormatter+USCurrency.swift */; };
+		52AD10E5240C4E1F00D29CAD /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E4240C4E1F00D29CAD /* Threading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		52AD10D3240C2B9D00D29CAD /* UIFont+Bold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Bold.swift"; sourceTree = "<group>"; };
 		52AD10D5240C2E1500D29CAD /* DurationString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationString.swift; sourceTree = "<group>"; };
 		52AD10D7240C3A2900D29CAD /* DurationStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationStringTests.swift; sourceTree = "<group>"; };
+		52AD10DA240C3ECC00D29CAD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		52AD10E0240C485400D29CAD /* TracksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksListViewModel.swift; sourceTree = "<group>"; };
+		52AD10E2240C4C9000D29CAD /* NumberFormatter+USCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+USCurrency.swift"; sourceTree = "<group>"; };
+		52AD10E4240C4E1F00D29CAD /* Threading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				5212B185240C0D280046572A /* DynamicSizingFlowLayout.swift */,
+				52AD10E0240C485400D29CAD /* TracksListViewModel.swift */,
 				5272C7D4240BFA2F00B730B8 /* TrackListViewController.swift */,
 				52AA2D59240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift */,
 				52AA2D58240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib */,
@@ -142,6 +151,7 @@
 		5272C7CF240BFA2F00B730B8 /* ScottishPowerTest */ = {
 			isa = PBXGroup;
 			children = (
+				52AD10D9240C3E8E00D29CAD /* Network */,
 				52AD10D2240C2B8D00D29CAD /* Utilities */,
 				52AD10C1240C197000D29CAD /* Model */,
 				5212B187240C0D2C0046572A /* TracksFlow */,
@@ -190,8 +200,18 @@
 			children = (
 				52AD10D3240C2B9D00D29CAD /* UIFont+Bold.swift */,
 				52AD10D5240C2E1500D29CAD /* DurationString.swift */,
+				52AD10E2240C4C9000D29CAD /* NumberFormatter+USCurrency.swift */,
+				52AD10E4240C4E1F00D29CAD /* Threading.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		52AD10D9240C3E8E00D29CAD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				52AD10DA240C3ECC00D29CAD /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AD10E5240C4E1F00D29CAD /* Threading.swift in Sources */,
 				5272C7D5240BFA2F00B730B8 /* TrackListViewController.swift in Sources */,
 				52AD10D6240C2E1500D29CAD /* DurationString.swift in Sources */,
 				52AA2D5B240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift in Sources */,
@@ -334,9 +355,12 @@
 				5212B184240C08020046572A /* Coordinator.swift in Sources */,
 				52AD10CB240C21C400D29CAD /* TrackDetailsViewModel.swift in Sources */,
 				52AD10D4240C2B9D00D29CAD /* UIFont+Bold.swift in Sources */,
+				52AD10E1240C485400D29CAD /* TracksListViewModel.swift in Sources */,
 				5212B182240C07FC0046572A /* AppCoordinator.swift in Sources */,
 				52AD10C4240C197C00D29CAD /* TrackDetails.swift in Sources */,
 				52AD10C5240C197C00D29CAD /* TracksResponse.swift in Sources */,
+				52AD10DB240C3ECC00D29CAD /* NetworkManager.swift in Sources */,
+				52AD10E3240C4C9000D29CAD /* NumberFormatter+USCurrency.swift in Sources */,
 				5272C7D1240BFA2F00B730B8 /* AppDelegate.swift in Sources */,
 				5212B18B240C0DD20046572A /* TracksFlowCoordinator.swift in Sources */,
 				5212B186240C0D290046572A /* DynamicSizingFlowLayout.swift in Sources */,

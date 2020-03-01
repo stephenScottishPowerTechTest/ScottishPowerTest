@@ -26,7 +26,13 @@ import UIKit
 
 class TrackSummaryCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var trackPriceLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    //Creating a formatter on every cell would be very inefficient.
+    static let currencyFormatter = NumberFormatter.USCurrencyFormatter()
     
     override func awakeFromNib() {
         
@@ -34,6 +40,13 @@ class TrackSummaryCollectionViewCell: UICollectionViewCell {
         //Color gotten by using a droplet picker on the wireframes border.
         self.contentView.layer.borderColor = UIColor(red:0.88, green:0.89, blue:0.89, alpha:1.00).cgColor
         self.contentView.layer.borderWidth = 1.0
+    }
+    
+    public func configureForTrack(trackSummary: TrackSummary) {
+        
+        self.artistLabel.text = trackSummary.artistName
+        self.trackNameLabel.text = trackSummary.trackName
+        self.trackPriceLabel.text = TrackSummaryCollectionViewCell.currencyFormatter.string(from: NSDecimalNumber(decimal: trackSummary.trackPrice))
     }
 
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
