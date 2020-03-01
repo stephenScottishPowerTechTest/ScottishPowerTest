@@ -2,23 +2,24 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Track List View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="y6e-3V-uc2">
             <objects>
-                <viewController storyboardIdentifier="TrackListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TrackListViewController" customModule="ScottishPowerTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="TrackListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f8e-RF-E8T" customClass="TrackListViewController" customModule="ScottishPowerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rCN-8b-d1g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yHa-lQ-1W1">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sML-4v-X5B">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kM1-Yt-vBw">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3wh-nF-K2p">
                                     <size key="itemSize" width="320" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -29,18 +30,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="yHa-lQ-1W1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HfZ-iz-0hx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yHa-lQ-1W1" secondAttribute="bottom" id="QT7-r3-Drg"/>
-                            <constraint firstItem="yHa-lQ-1W1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aoK-HN-NxC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yHa-lQ-1W1" secondAttribute="trailing" id="s1o-ud-RJP"/>
+                            <constraint firstItem="sML-4v-X5B" firstAttribute="top" secondItem="hoX-cH-gPw" secondAttribute="top" id="5jR-Ee-Aka"/>
+                            <constraint firstItem="sML-4v-X5B" firstAttribute="leading" secondItem="hoX-cH-gPw" secondAttribute="leading" id="Idb-0K-GL7"/>
+                            <constraint firstItem="hoX-cH-gPw" firstAttribute="bottom" secondItem="sML-4v-X5B" secondAttribute="bottom" id="Md6-Pg-jdq"/>
+                            <constraint firstItem="hoX-cH-gPw" firstAttribute="trailing" secondItem="sML-4v-X5B" secondAttribute="trailing" id="PiO-jn-aEH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="hoX-cH-gPw"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="yHa-lQ-1W1" id="rsf-2n-M13"/>
+                        <outlet property="collectionView" destination="sML-4v-X5B" id="A4O-aV-6gO"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UGA-XV-xUS" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>

@@ -22,7 +22,7 @@ class AppCoordinator: NSObject, Coordinator {
 
     func start() {
       
-        guard let trackListVC = TrackListViewController.instantiate(storyboard: "Main", identifier: "TrackListViewController") else {
+        guard let trackListVC = TrackListViewController.instantiate(storyboard: "TracksFlow", identifier: "TrackListViewController") else {
             debugPrint("Could not create view controller from storyboard and identifier given")
             return
         }
