@@ -22,6 +22,7 @@ protocol ResumableCoordinator: Coordinator {
 
 protocol CoordinatedViewController: AnyObject {
 
+    //Could further enhance this by defaulting to String(describing: class.self)
     static func instantiate(storyboard: String, identifier: String) -> Self?
 }
 

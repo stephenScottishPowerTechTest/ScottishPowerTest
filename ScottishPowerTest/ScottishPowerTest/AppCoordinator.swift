@@ -21,10 +21,13 @@ class AppCoordinator: NSObject, Coordinator {
     }
 
     func start() {
+      
+        guard let trackListVC = TrackListViewController.instantiate(storyboard: "Main", identifier: "TrackListViewController") else {
+            debugPrint("Could not create view controller from storyboard and identifier given")
+            return
+        }
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "TrackListViewController")
-        let navigationController = UINavigationController(rootViewController: vc)
+        let navigationController = UINavigationController(rootViewController: trackListVC)
         self.appWindow.rootViewController = navigationController
         self.presenter = navigationController
         self.appWindow.makeKeyAndVisible()

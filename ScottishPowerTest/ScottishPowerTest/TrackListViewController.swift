@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrackListViewController: UIViewController {
+class TrackListViewController: UIViewController, CoordinatedViewController {
     
     //constants
     let cellSpacing = CGFloat(24)
@@ -18,9 +18,8 @@ class TrackListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        super.viewDidLoad()
         self.title = NSLocalizedString("Rock Tracks", comment: "Rock Tracks")
         self.view.backgroundColor = UIColor.lightGray
         self.configureCollectionView()
