@@ -47,6 +47,7 @@ class TrackSummaryCollectionViewCell: UICollectionViewCell {
         self.artistLabel.text = trackSummary.artistName
         self.trackNameLabel.text = trackSummary.trackName
         self.trackPriceLabel.text = TrackSummaryCollectionViewCell.currencyFormatter.string(from: NSDecimalNumber(decimal: trackSummary.trackPrice))
+        self.imageView.loadImage(fromURLString: trackSummary.artworkUrl100)
     }
 
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {

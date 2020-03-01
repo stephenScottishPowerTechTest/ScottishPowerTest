@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class TrackDetailsViewController: UIViewController, CoordinatedViewController {
     
@@ -67,11 +68,6 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
 
     @IBAction func moreDetailsTapped(_ sender: Any) {
         
-        /*
-         Personally I would use SFSafariViewController to launch while remaining in app, however the test specified launching the browser and I've taken this
-         to mean that I should launch safari separately on device.
-         Also note that I definitely wouldn't use web view as this is deprecated and would result in a rejection from app store review.
-         */
         guard let details = self.viewModel?.trackDetails,
             let url = URL(string: details.trackViewUrl) else {
                 
@@ -85,11 +81,19 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
                 let okAction = UIAlertAction(title: okTitle, style: .default, handler: nil)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
-                
                 return
-                
         }
         
-            UIApplication.shared.open(url)
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.delegate = self
+        self.present(safariViewController, animated: true)
+    }
+}
+
+extension TrackDetailsViewController: SFSafariViewControllerDelegate {
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        
+        dismiss(animated: true)
     }
 }

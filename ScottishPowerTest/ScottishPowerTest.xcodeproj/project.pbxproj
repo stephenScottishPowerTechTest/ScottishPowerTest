@@ -33,6 +33,8 @@
 		52AD10E1240C485400D29CAD /* TracksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E0240C485400D29CAD /* TracksListViewModel.swift */; };
 		52AD10E3240C4C9000D29CAD /* NumberFormatter+USCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E2240C4C9000D29CAD /* NumberFormatter+USCurrency.swift */; };
 		52AD10E5240C4E1F00D29CAD /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E4240C4E1F00D29CAD /* Threading.swift */; };
+		52AD10E7240C4F3100D29CAD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E6240C4F3100D29CAD /* ImageCache.swift */; };
+		52AD10E9240C50FC00D29CAD /* ImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E8240C50FC00D29CAD /* ImageView+Download.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		52AD10E0240C485400D29CAD /* TracksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksListViewModel.swift; sourceTree = "<group>"; };
 		52AD10E2240C4C9000D29CAD /* NumberFormatter+USCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+USCurrency.swift"; sourceTree = "<group>"; };
 		52AD10E4240C4E1F00D29CAD /* Threading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
+		52AD10E6240C4F3100D29CAD /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		52AD10E8240C50FC00D29CAD /* ImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Download.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				52AD10DA240C3ECC00D29CAD /* NetworkManager.swift */,
+				52AD10E6240C4F3100D29CAD /* ImageCache.swift */,
+				52AD10E8240C50FC00D29CAD /* ImageView+Download.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -355,10 +361,12 @@
 				5212B184240C08020046572A /* Coordinator.swift in Sources */,
 				52AD10CB240C21C400D29CAD /* TrackDetailsViewModel.swift in Sources */,
 				52AD10D4240C2B9D00D29CAD /* UIFont+Bold.swift in Sources */,
+				52AD10E9240C50FC00D29CAD /* ImageView+Download.swift in Sources */,
 				52AD10E1240C485400D29CAD /* TracksListViewModel.swift in Sources */,
 				5212B182240C07FC0046572A /* AppCoordinator.swift in Sources */,
 				52AD10C4240C197C00D29CAD /* TrackDetails.swift in Sources */,
 				52AD10C5240C197C00D29CAD /* TracksResponse.swift in Sources */,
+				52AD10E7240C4F3100D29CAD /* ImageCache.swift in Sources */,
 				52AD10DB240C3ECC00D29CAD /* NetworkManager.swift in Sources */,
 				52AD10E3240C4C9000D29CAD /* NumberFormatter+USCurrency.swift in Sources */,
 				5272C7D1240BFA2F00B730B8 /* AppDelegate.swift in Sources */,
