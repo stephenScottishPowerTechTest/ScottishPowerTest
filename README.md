@@ -15,7 +15,11 @@ I also assumed going to Apple music on device is ok, and as such coded around go
 
 I've also scaled up album art where I can by downloading a higher resolution from Apple by editing the URL that comes back in their original response. This doesn't always work however so I default do the standard 100x100 size.
 
-#### Things I would take further
+####Springy Collection View Flow Layout
+
+I have included a flow layout that I didn't end up using in the end. I originally had an idea of having a slight spring in the scrolling of the cells, similar to iMessage. However just due to time constraints I couldn't get it working that well. It's almost there though so I've left in the code commented out, so that it can be seen.
+
+####Things I Would Take Further
 
 The image view that downloads images isn't an ideal solution. I'd want some sort of manager to do these network calls, perhaps even the network manager, and it would be up to this to also deal with the image cache. 
 

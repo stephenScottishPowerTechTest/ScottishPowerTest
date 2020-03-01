@@ -10,6 +10,8 @@ import UIKit
 
 class TrackListViewController: UIViewController, CoordinatedViewController {
     
+//    let customFlowLayout = VerticalBouncyCollectionViewLayout()
+    
     let customFlowLayout = DynamicSizingFlowLayout()
     
     let cellSpacing = CGFloat(24)
@@ -64,6 +66,21 @@ class TrackListViewController: UIViewController, CoordinatedViewController {
         collectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
     }
 }
+//Uncomment to use with VerticalBouncyCollectionViewLayout
+//extension TrackListViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return .init(width: 380, height: 120)
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return .init(
+//            top: 12,
+//            left: 12,
+//            bottom: 12,
+//            right: 12
+//        )
+//    }
+//}
 
 
 //Putting this here for now. With larger view controllers I'd split this out into it's own file or class

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5209823C240C7C6D006FDF4C /* VerticalBouncyCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209823B240C7C6D006FDF4C /* VerticalBouncyCollectionViewLayout.swift */; };
 		5212B182240C07FC0046572A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212B181240C07FC0046572A /* AppCoordinator.swift */; };
 		5212B184240C08020046572A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212B183240C08020046572A /* Coordinator.swift */; };
 		5212B186240C0D290046572A /* DynamicSizingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212B185240C0D280046572A /* DynamicSizingFlowLayout.swift */; };
@@ -57,12 +58,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5209823B240C7C6D006FDF4C /* VerticalBouncyCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalBouncyCollectionViewLayout.swift; sourceTree = "<group>"; };
 		5212B181240C07FC0046572A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5212B183240C08020046572A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5212B185240C0D280046572A /* DynamicSizingFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicSizingFlowLayout.swift; sourceTree = "<group>"; };
 		5212B188240C0D5C0046572A /* TracksFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TracksFlow.storyboard; sourceTree = "<group>"; };
 		5212B18A240C0DD20046572A /* TracksFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksFlowCoordinator.swift; sourceTree = "<group>"; };
-		5272C7CD240BFA2F00B730B8 /* ScottishPowerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScottishPowerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5272C7CD240BFA2F00B730B8 /* Rock Tracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rock Tracks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5272C7D0240BFA2F00B730B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5272C7D4240BFA2F00B730B8 /* TrackListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewController.swift; sourceTree = "<group>"; };
 		5272C7D9240BFA3000B730B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				52AD10E0240C485400D29CAD /* TracksListViewModel.swift */,
 				5272C7D4240BFA2F00B730B8 /* TrackListViewController.swift */,
 				52AA2D59240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift */,
+				5209823B240C7C6D006FDF4C /* VerticalBouncyCollectionViewLayout.swift */,
 				52AA2D58240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib */,
 				5212B188240C0D5C0046572A /* TracksFlow.storyboard */,
 				5212B18A240C0DD20046572A /* TracksFlowCoordinator.swift */,
@@ -149,7 +152,7 @@
 		5272C7CE240BFA2F00B730B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5272C7CD240BFA2F00B730B8 /* ScottishPowerTest.app */,
+				5272C7CD240BFA2F00B730B8 /* Rock Tracks.app */,
 				5272C7E3240BFA3000B730B8 /* ScottishPowerTestTests.xctest */,
 				5272C7EE240BFA3100B730B8 /* ScottishPowerTestUITests.xctest */,
 			);
@@ -243,7 +246,7 @@
 			);
 			name = ScottishPowerTest;
 			productName = ScottishPowerTest;
-			productReference = 5272C7CD240BFA2F00B730B8 /* ScottishPowerTest.app */;
+			productReference = 5272C7CD240BFA2F00B730B8 /* Rock Tracks.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5272C7E2240BFA3000B730B8 /* ScottishPowerTestTests */ = {
@@ -367,6 +370,7 @@
 				5212B184240C08020046572A /* Coordinator.swift in Sources */,
 				52AD10CB240C21C400D29CAD /* TrackDetailsViewModel.swift in Sources */,
 				52AD10D4240C2B9D00D29CAD /* UIFont+Bold.swift in Sources */,
+				5209823C240C7C6D006FDF4C /* VerticalBouncyCollectionViewLayout.swift in Sources */,
 				52AD10E9240C50FC00D29CAD /* ImageView+Download.swift in Sources */,
 				52AD10ED240C61B500D29CAD /* Router.swift in Sources */,
 				52AD10E1240C485400D29CAD /* TracksListViewModel.swift in Sources */,
@@ -555,7 +559,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.biggerstaff.ScottishPowerTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Rock Tracks";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -574,7 +578,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.biggerstaff.ScottishPowerTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Rock Tracks";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
