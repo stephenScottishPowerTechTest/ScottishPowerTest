@@ -75,7 +75,7 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    private private func configureWithTrackDetails(trackDetails: TrackDetails) {
+    private func configureWithTrackDetails(trackDetails: TrackDetails) {
         
         self.trackNameLabel.text = trackDetails.trackName
         self.artistLabel.text = trackDetails.artistName
