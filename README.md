@@ -9,7 +9,7 @@ The project supports Dyanmic type, with self sizing cells, as well as dark mode 
 
 To support dynamic type and a potential for long artist and track titles, I've made the flow handle resizing each cell individually. However it's just a case of changing the custom layout flow in order to make them all a standard size if that's desired. This can also be done by the labels themselves changing the font and number of lines.
 
-I've stuck with this in the details, however in the list, I went for squares as cropping issues would occur and I thought the squares looked better. Obviously in a work environment this would be at the UX teams discression, so I have an easy set of constraints to change the priority on to make the image take up half the cell (as per wireframes).
+I've stuck with album art being recrangle in the details view, as per wireframes, however in the list, I went for squares as cropping issues would occur and I thought the squares looked better. Obviously in a work environment this would be at the UX teams discression, so I have an easy set of constraints to change the priority on to make the image take up half the cell (as per wireframes).
 
 I also assumed going to Apple music on device is ok, and as such coded around going straight there rather than to a SFSafariViewController. I tried doing it via SafariViewController, but it opens a blank page then redirects to Apple Music app. It seems apple do not allow itunes links for music to be opened on Safari for iOS. 
 
