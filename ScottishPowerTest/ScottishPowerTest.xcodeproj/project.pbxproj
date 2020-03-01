@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		5272C7D1240BFA2F00B730B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272C7D0240BFA2F00B730B8 /* AppDelegate.swift */; };
 		5272C7D3240BFA2F00B730B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272C7D2240BFA2F00B730B8 /* SceneDelegate.swift */; };
-		5272C7D5240BFA2F00B730B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272C7D4240BFA2F00B730B8 /* ViewController.swift */; };
+		5272C7D5240BFA2F00B730B8 /* TrackListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272C7D4240BFA2F00B730B8 /* TrackListViewController.swift */; };
 		5272C7D8240BFA2F00B730B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5272C7D6240BFA2F00B730B8 /* Main.storyboard */; };
 		5272C7DA240BFA3000B730B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5272C7D9240BFA3000B730B8 /* Assets.xcassets */; };
 		5272C7DD240BFA3000B730B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5272C7DB240BFA3000B730B8 /* LaunchScreen.storyboard */; };
 		5272C7E8240BFA3100B730B8 /* ScottishPowerTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272C7E7240BFA3100B730B8 /* ScottishPowerTestTests.swift */; };
 		5272C7F3240BFA3100B730B8 /* ScottishPowerTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272C7F2240BFA3100B730B8 /* ScottishPowerTestUITests.swift */; };
+		52AA2D5A240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AA2D58240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib */; };
+		52AA2D5B240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2D59240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 		5272C7CD240BFA2F00B730B8 /* ScottishPowerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScottishPowerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5272C7D0240BFA2F00B730B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5272C7D2240BFA2F00B730B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5272C7D4240BFA2F00B730B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5272C7D4240BFA2F00B730B8 /* TrackListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewController.swift; sourceTree = "<group>"; };
 		5272C7D7240BFA2F00B730B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5272C7D9240BFA3000B730B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5272C7DC240BFA3000B730B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		5272C7EE240BFA3100B730B8 /* ScottishPowerTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScottishPowerTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5272C7F2240BFA3100B730B8 /* ScottishPowerTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScottishPowerTestUITests.swift; sourceTree = "<group>"; };
 		5272C7F4240BFA3100B730B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52AA2D58240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackSummaryCollectionViewCell.xib; sourceTree = "<group>"; };
+		52AA2D59240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,11 @@
 		5272C7CF240BFA2F00B730B8 /* ScottishPowerTest */ = {
 			isa = PBXGroup;
 			children = (
+				52AA2D59240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift */,
+				52AA2D58240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib */,
 				5272C7D0240BFA2F00B730B8 /* AppDelegate.swift */,
 				5272C7D2240BFA2F00B730B8 /* SceneDelegate.swift */,
-				5272C7D4240BFA2F00B730B8 /* ViewController.swift */,
+				5272C7D4240BFA2F00B730B8 /* TrackListViewController.swift */,
 				5272C7D6240BFA2F00B730B8 /* Main.storyboard */,
 				5272C7D9240BFA3000B730B8 /* Assets.xcassets */,
 				5272C7DB240BFA3000B730B8 /* LaunchScreen.storyboard */,
@@ -192,7 +198,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "Stephen Biggerstaff";
+				ORGANIZATIONNAME = Stephen;
 				TargetAttributes = {
 					5272C7CC240BFA2F00B730B8 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -233,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5272C7DD240BFA3000B730B8 /* LaunchScreen.storyboard in Resources */,
+				52AA2D5A240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib in Resources */,
 				5272C7DA240BFA3000B730B8 /* Assets.xcassets in Resources */,
 				5272C7D8240BFA2F00B730B8 /* Main.storyboard in Resources */,
 			);
@@ -259,7 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5272C7D5240BFA2F00B730B8 /* ViewController.swift in Sources */,
+				5272C7D5240BFA2F00B730B8 /* TrackListViewController.swift in Sources */,
+				52AA2D5B240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift in Sources */,
 				5272C7D1240BFA2F00B730B8 /* AppDelegate.swift in Sources */,
 				5272C7D3240BFA2F00B730B8 /* SceneDelegate.swift in Sources */,
 			);

@@ -2,8 +2,8 @@
 //  ScottishPowerTestUITests.swift
 //  ScottishPowerTestUITests
 //
-//  Created by Stephen Biggerstaff on 01/03/2020.
-//  Copyright © 2020 Stephen Biggerstaff. All rights reserved.
+//  Created by Stephen on 01/03/2020.
+//  Copyright © 2020 Stephen. All rights reserved.
 //
 
 import XCTest
