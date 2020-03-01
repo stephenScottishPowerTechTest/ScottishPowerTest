@@ -45,5 +45,82 @@
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
+        <!--Track Details View Controller-->
+        <scene sceneID="lbY-6X-wrA">
+            <objects>
+                <viewController id="ec0-hU-jXx" customClass="TrackDetailsViewController" customModule="ScottishPowerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="073-4p-jUc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QG-Ke-7q2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="207"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0QG-Ke-7q2" secondAttribute="height" multiplier="2:1" id="PUw-1k-aYU"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2RN-kB-iA7">
+                                <rect key="frame" x="16" y="259" width="382" height="102.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqM-sV-zxb">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy5-ln-rOy">
+                                        <rect key="frame" x="0.0" y="20.5" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UY-ai-RvL">
+                                        <rect key="frame" x="0.0" y="41" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9m-nB-JEd">
+                                        <rect key="frame" x="0.0" y="61.5" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHQ-nw-nHd">
+                                        <rect key="frame" x="0.0" y="82" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FU-iY-cmh">
+                                <rect key="frame" x="16" y="441.5" width="382" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nyl-dm-IPn"/>
+                                </constraints>
+                                <state key="normal" title="More Details"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0QG-Ke-7q2" firstAttribute="top" secondItem="r8a-gi-qN1" secondAttribute="top" id="00X-27-uxk"/>
+                            <constraint firstItem="0QG-Ke-7q2" firstAttribute="trailing" secondItem="r8a-gi-qN1" secondAttribute="trailing" id="1aw-iM-3fX"/>
+                            <constraint firstItem="1FU-iY-cmh" firstAttribute="leading" secondItem="r8a-gi-qN1" secondAttribute="leading" constant="16" id="4PA-Cz-ph8"/>
+                            <constraint firstItem="2RN-kB-iA7" firstAttribute="top" secondItem="0QG-Ke-7q2" secondAttribute="bottom" constant="8" id="87E-nG-i6h"/>
+                            <constraint firstItem="r8a-gi-qN1" firstAttribute="trailing" secondItem="1FU-iY-cmh" secondAttribute="trailing" constant="16" id="94d-iq-fS7"/>
+                            <constraint firstItem="r8a-gi-qN1" firstAttribute="trailing" secondItem="2RN-kB-iA7" secondAttribute="trailing" constant="16" id="ce9-JX-Ymj"/>
+                            <constraint firstItem="0QG-Ke-7q2" firstAttribute="leading" secondItem="r8a-gi-qN1" secondAttribute="leading" id="cua-BO-uVR"/>
+                            <constraint firstItem="2RN-kB-iA7" firstAttribute="leading" secondItem="r8a-gi-qN1" secondAttribute="leading" constant="16" id="f1B-Ii-4yN"/>
+                            <constraint firstItem="1FU-iY-cmh" firstAttribute="top" secondItem="2RN-kB-iA7" secondAttribute="bottom" constant="80" id="xF1-xy-SUh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r8a-gi-qN1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQA-ux-QvQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="137.94642857142856"/>
+        </scene>
     </scenes>
 </document>

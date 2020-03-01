@@ -20,6 +20,7 @@
 		5272C7F3240BFA3100B730B8 /* ScottishPowerTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272C7F2240BFA3100B730B8 /* ScottishPowerTestUITests.swift */; };
 		52AA2D5A240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AA2D58240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib */; };
 		52AA2D5B240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2D59240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift */; };
+		52AD10C0240C118F00D29CAD /* TrackDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10BF240C118F00D29CAD /* TrackDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		5272C7F4240BFA3100B730B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AA2D58240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackSummaryCollectionViewCell.xib; sourceTree = "<group>"; };
 		52AA2D59240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		52AD10BF240C118F00D29CAD /* TrackDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				52AA2D58240BFFCF008439C8 /* TrackSummaryCollectionViewCell.xib */,
 				5212B188240C0D5C0046572A /* TracksFlow.storyboard */,
 				5212B18A240C0DD20046572A /* TracksFlowCoordinator.swift */,
+				52AD10BF240C118F00D29CAD /* TrackDetailsViewController.swift */,
 			);
 			path = TracksFlow;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				5272C7D5240BFA2F00B730B8 /* TrackListViewController.swift in Sources */,
 				52AA2D5B240BFFCF008439C8 /* TrackSummaryCollectionViewCell.swift in Sources */,
+				52AD10C0240C118F00D29CAD /* TrackDetailsViewController.swift in Sources */,
 				5212B184240C08020046572A /* Coordinator.swift in Sources */,
 				5212B182240C07FC0046572A /* AppCoordinator.swift in Sources */,
 				5272C7D1240BFA2F00B730B8 /* AppDelegate.swift in Sources */,

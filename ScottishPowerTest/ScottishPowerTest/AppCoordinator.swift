@@ -11,6 +11,8 @@ import UIKit
 
 class AppCoordinator: NSObject, Coordinator {
     
+    let tracksFlowCoordinatorKey = "TracksListCoordinator"
+    
     var presenter: UINavigationController?
     var appWindow: UIWindow
     var coordinators: [String: Coordinator] = [:]
@@ -22,20 +24,31 @@ class AppCoordinator: NSObject, Coordinator {
 
     func start() {
       
-        guard let trackListVC = TrackListViewController.instantiate(storyboard: "TracksFlow", identifier: "TrackListViewController") else {
-            debugPrint("Could not create view controller from storyboard and identifier given")
-            return
-        }
-        
-        let navigationController = UINavigationController(rootViewController: trackListVC)
+        let navigationController = UINavigationController()
         self.appWindow.rootViewController = navigationController
         self.presenter = navigationController
         self.appWindow.makeKeyAndVisible()
+        self.presentApplication()
+    }
+    
+    private func presentApplication() {
+        //Typically this function could decide to show a login or proceed to the application
+        //This would require a think around which view should be root, or maybe a blank root vc
+        self.presentTracksFlow()
+    }
+    
+    private func presentTracksFlow() {
+        
+        let trackFlowCoordinator = TracksFlowCoordinator(presenter: self.presenter)
+        trackFlowCoordinator.start()
+        self.coordinators[tracksFlowCoordinatorKey] = trackFlowCoordinator
     }
 }
 
 extension AppCoordinator: UINavigationControllerDelegate {
     
+    //Memory managing the coordinators based on when they have their root view popped off the stack.
+    //Adapted from: https://www.hackingwithswift.com/articles/175/advanced-coordinator-pattern-tutorial-ios
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         
         guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
