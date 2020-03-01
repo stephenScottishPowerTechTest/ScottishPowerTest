@@ -2,7 +2,7 @@
 //  TracksFlowCoordinator.swift
 //  ScottishPowerTest
 //
-//  Created by Stephen Biggerstaff on 01/03/2020.
+//  Created by Stephen  on 01/03/2020.
 //  Copyright © 2020 Stephen. All rights reserved.
 //
 
@@ -44,7 +44,7 @@ extension TracksFlowCoordinator: TracksFlowCoordination {
             debugPrint("Could not create Track Details view controller.")
             return
         }
-        //TODO: bind track details to the details VC.
+        detailsVC.bind(trackDetails: trackDetails)
         self.presenter?.pushViewController(detailsVC, animated: true)
     }
 }

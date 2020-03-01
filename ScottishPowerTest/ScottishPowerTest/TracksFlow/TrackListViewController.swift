@@ -40,6 +40,7 @@ class TrackListViewController: UIViewController, CoordinatedViewController {
         
         collectionView.collectionViewLayout = customFlowLayout
         
+        collectionView.backgroundColor = UIColor(red:0.95, green:0.96, blue:0.96, alpha:1.00) //Taken by dropper from Wireframes
         collectionView.contentInsetAdjustmentBehavior = .always
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -71,7 +72,7 @@ extension TrackListViewController: UICollectionViewDelegate, UICollectionViewDat
                                         trackPrice: 0.99,
                                         releaseDate: Date(),
                                         artworkUrl100: "https://example.com",
-                                        trackTimeMillis: 100,
+                                        trackTimeMillis: 68000000,
                                         trackViewUrl: "https://example.com")
         
         self.trackFlowCoordinationDelegate?.detailsRequested(from: self, trackDetails: exampleTrack)

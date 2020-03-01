@@ -60,47 +60,51 @@
                                     <constraint firstAttribute="width" secondItem="0QG-Ke-7q2" secondAttribute="height" multiplier="2:1" id="PUw-1k-aYU"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2RN-kB-iA7">
-                                <rect key="frame" x="16" y="259" width="382" height="102.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="2RN-kB-iA7">
+                                <rect key="frame" x="16" y="259" width="382" height="118.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqM-sV-zxb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqM-sV-zxb">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy5-ln-rOy">
-                                        <rect key="frame" x="0.0" y="20.5" width="382" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UY-ai-RvL">
-                                        <rect key="frame" x="0.0" y="41" width="382" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="49" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9m-nB-JEd">
-                                        <rect key="frame" x="0.0" y="61.5" width="382" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="73.5" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHQ-nw-nHd">
-                                        <rect key="frame" x="0.0" y="82" width="382" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="98" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FU-iY-cmh">
-                                <rect key="frame" x="16" y="441.5" width="382" height="44"/>
+                                <rect key="frame" x="16" y="457.5" width="382" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="nyl-dm-IPn"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <state key="normal" title="More Details"/>
+                                <connections>
+                                    <action selector="moreDetailsTapped:" destination="ec0-hU-jXx" eventType="touchUpInside" id="umj-Y7-efa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -117,6 +121,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r8a-gi-qN1"/>
                     </view>
+                    <connections>
+                        <outlet property="artistLabel" destination="jy5-ln-rOy" id="rU2-rd-8ZC"/>
+                        <outlet property="durationLabel" destination="R9m-nB-JEd" id="2LW-2B-rXe"/>
+                        <outlet property="moreDetailsButton" destination="1FU-iY-cmh" id="oNR-KA-JlW"/>
+                        <outlet property="releaseDateLabel" destination="SHQ-nw-nHd" id="JtG-jM-AuI"/>
+                        <outlet property="stackView" destination="2RN-kB-iA7" id="Bqs-hG-YA4"/>
+                        <outlet property="trackNameLabel" destination="PqM-sV-zxb" id="JDj-F5-Osh"/>
+                        <outlet property="trackPriceLabel" destination="4UY-ai-RvL" id="f0F-CD-Znt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQA-ux-QvQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

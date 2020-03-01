@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let coordinator = AppCoordinator(window: window)
         self.appCoordinator = coordinator
         self.appCoordinator?.start()
+        
         return true
     }
 }
