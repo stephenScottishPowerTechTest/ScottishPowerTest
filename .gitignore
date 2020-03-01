@@ -1,0 +1,14 @@
+## User settings
+xcuserdata/
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+.build/
+
+## OS X temporary files that should never be committed
+
+.DS_Store
+*.swp
+profile
