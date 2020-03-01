@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-protocol TracksFlowCoordination {
+protocol TracksFlowCoordination: class {
     
-    func detailsRequested(from viewController: UIViewController) //TODO: Add track that we're navigating to.
+    func detailsRequested(from viewController: UIViewController, trackDetails: TrackDetails)
 }
 
 class TracksFlowCoordinator: Coordinator {
@@ -26,18 +26,25 @@ class TracksFlowCoordinator: Coordinator {
     func start() {
         
         guard let trackListVC = TrackListViewController.instantiate(storyboard: "TracksFlow", identifier: "TrackListViewController") else {
-            debugPrint("Could not create view controller from storyboard and identifier given")
+            debugPrint("Could not create Track List view controller")
             return
         }
-        
+        trackListVC.trackFlowCoordinationDelegate = self
         self.presenter?.pushViewController(trackListVC, animated: false)
     }
 }
 
 extension TracksFlowCoordinator: TracksFlowCoordination {
     
-    func detailsRequested(from viewController: UIViewController) {
+    func detailsRequested(from viewController: UIViewController, trackDetails: TrackDetails) {
         
-        //TODO: Move to track details
+        guard let detailsVC = TrackDetailsViewController.instantiate(storyboard: "TracksFlow",
+                                                                     identifier: "TrackDetailsViewController") else {
+            
+            debugPrint("Could not create Track Details view controller.")
+            return
+        }
+        //TODO: bind track details to the details VC.
+        self.presenter?.pushViewController(detailsVC, animated: true)
     }
 }

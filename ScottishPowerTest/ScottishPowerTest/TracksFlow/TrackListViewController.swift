@@ -15,6 +15,8 @@ class TrackListViewController: UIViewController, CoordinatedViewController {
     let cellSpacing = CGFloat(24)
     let cellInset = CGFloat(16)
     let cellIdentifier = String(describing: TrackSummaryCollectionViewCell.self)
+    
+    weak var trackFlowCoordinationDelegate: TracksFlowCoordination?
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -60,5 +62,18 @@ extension TrackListViewController: UICollectionViewDelegate, UICollectionViewDat
                                                       for: indexPath) as! TrackSummaryCollectionViewCell
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let exampleTrack = TrackDetails(artistName: "Test",
+                                        trackName: "Track",
+                                        trackPrice: 0.99,
+                                        releaseDate: Date(),
+                                        artworkUrl100: "https://example.com",
+                                        trackTimeMillis: 100,
+                                        trackViewUrl: "https://example.com")
+        
+        self.trackFlowCoordinationDelegate?.detailsRequested(from: self, trackDetails: exampleTrack)
     }
 }

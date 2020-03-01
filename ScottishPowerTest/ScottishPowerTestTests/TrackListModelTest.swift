@@ -9,15 +9,11 @@
 import XCTest
 @testable import ScottishPowerTest
 
+/*  This test class assumes that the format on the server won't change. In reality I've had two separate tests in the past.
+    One for offline check using a stored JSON file, then another that checks against a live service to make sure it matches expected format.
+ */
+
 class TrackListModelTest: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
 
     func testParsingExpectedJSON() {
        

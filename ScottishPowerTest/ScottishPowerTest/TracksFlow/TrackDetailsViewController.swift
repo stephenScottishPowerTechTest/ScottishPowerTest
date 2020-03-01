@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrackDetailsViewController: UIViewController {
+class TrackDetailsViewController: UIViewController, CoordinatedViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
