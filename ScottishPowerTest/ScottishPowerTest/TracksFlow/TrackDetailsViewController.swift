@@ -10,7 +10,7 @@ import UIKit
 
 class TrackDetailsViewController: UIViewController, CoordinatedViewController {
     
-    var viewModel: TrackDetailsViewModel?
+    private var viewModel: TrackDetailsViewModel?
 
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var trackNameLabel: UILabel!
@@ -70,12 +70,12 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
         self.backButton.backgroundColor = UIColor(white: 0.4, alpha: 0.1)
     }
     
-    @IBAction func backTapped(_ sender: Any) {
+    @IBAction private func backTapped(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
     }
     
-    private func configureWithTrackDetails(trackDetails: TrackDetails) {
+    private private func configureWithTrackDetails(trackDetails: TrackDetails) {
         
         self.trackNameLabel.text = trackDetails.trackName
         self.artistLabel.text = trackDetails.artistName

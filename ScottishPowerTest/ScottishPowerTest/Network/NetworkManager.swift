@@ -33,7 +33,7 @@ enum Result<String>{
 
 class NetworkManager {
     
-    let router = Router()
+    private let router = Router()
     
     /*
      Ideally a lot of the gritty details would be abstracted out to a router class and the request would be build up from an EndPoint enum.

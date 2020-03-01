@@ -15,7 +15,7 @@ protocol TracksListViewModelDelegate: class {
 
 class TracksListViewModel {
     
-    var networkManager = NetworkManager()
+    private var networkManager = NetworkManager()
     weak var delegate: TracksListViewModelDelegate?
     var tracks: [TrackDetails] = []
     

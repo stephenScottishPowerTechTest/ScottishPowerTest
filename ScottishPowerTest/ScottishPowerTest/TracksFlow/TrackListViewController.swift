@@ -14,11 +14,11 @@ class TrackListViewController: UIViewController, CoordinatedViewController {
     
     let customFlowLayout = DynamicSizingFlowLayout()
     
-    let cellSpacing = CGFloat(24)
-    let cellInset = CGFloat(16)
-    let cellIdentifier = String(describing: TrackSummaryCollectionViewCell.self)
+    private let cellSpacing = CGFloat(24)
+    private let cellInset = CGFloat(16)
+    private let cellIdentifier = String(describing: TrackSummaryCollectionViewCell.self)
     
-    var viewModel: TracksListViewModel?
+    private var viewModel: TracksListViewModel?
     
     weak var trackFlowCoordinationDelegate: TracksFlowCoordination?
 
@@ -44,12 +44,12 @@ class TrackListViewController: UIViewController, CoordinatedViewController {
         
     }
     
-    @objc func userChangedTextSize(notification: Notification) {
+    @objc private func userChangedTextSize(notification: Notification) {
         
         self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    func configureCollectionView() {
+    private func configureCollectionView() {
       
         customFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         customFlowLayout.minimumInteritemSpacing = cellSpacing

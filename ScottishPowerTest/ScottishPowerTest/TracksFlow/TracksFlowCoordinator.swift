@@ -16,7 +16,7 @@ protocol TracksFlowCoordination: class {
 
 class TracksFlowCoordinator: Coordinator {
     
-    weak var presenter: UINavigationController?
+    weak private var presenter: UINavigationController?
     
     init(presenter: UINavigationController?) {
         
