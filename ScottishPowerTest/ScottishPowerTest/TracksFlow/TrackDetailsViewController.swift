@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class TrackDetailsViewController: UIViewController, CoordinatedViewController {
     
@@ -20,6 +19,7 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var moreDetailsButton: UIButton!
     
     static let currencyFormatter = NumberFormatter.USCurrencyFormatter()
@@ -59,6 +59,18 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
         self.trackPriceLabel.text = TrackDetailsViewController.currencyFormatter.string(from: NSDecimalNumber(decimal: trackDetails.trackPrice))
         self.durationLabel.text = DurationStringHelper.durationString(milliseconds: trackDetails.trackTimeMillis)
         self.releaseDateLabel.text = TrackDetailsViewController.dateFormatter.string(from: trackDetails.releaseDate)
+        self.imageView.image = ImageManager.image(forURLString: trackDetails.artworkUrl100)
+        
+        
+    }
+    
+    private func downloadBetterImage() {
+        
+        //Scale to the width as that's the longest dimension
+        let width = self.view.bounds.width
+        let dimensionRoundedUp = 100 * Int(round(width / 100.0))
+        
+        debugPrint("Rounded up")
     }
     
     public func bind(trackDetails: TrackDetails) {
@@ -68,6 +80,11 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
 
     @IBAction func moreDetailsTapped(_ sender: Any) {
         
+        /*
+         Normally I'd use SFSafari controller from the SafariServices Module, however apple seem
+         to no longer let you open music links on the phone in safari and instead force through to apple music.
+         Doing it this way is a little cleaner when transitioning to apple music.
+         */
         guard let details = self.viewModel?.trackDetails,
             let url = URL(string: details.trackViewUrl) else {
                 
@@ -81,19 +98,10 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
                 let okAction = UIAlertAction(title: okTitle, style: .default, handler: nil)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
+                
                 return
         }
         
-        let safariViewController = SFSafariViewController(url: url)
-        safariViewController.delegate = self
-        self.present(safariViewController, animated: true)
-    }
-}
-
-extension TrackDetailsViewController: SFSafariViewControllerDelegate {
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        
-        dismiss(animated: true)
+        UIApplication.shared.open(url)
     }
 }

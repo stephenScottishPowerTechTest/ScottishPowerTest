@@ -35,6 +35,8 @@
 		52AD10E5240C4E1F00D29CAD /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E4240C4E1F00D29CAD /* Threading.swift */; };
 		52AD10E7240C4F3100D29CAD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E6240C4F3100D29CAD /* ImageCache.swift */; };
 		52AD10E9240C50FC00D29CAD /* ImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10E8240C50FC00D29CAD /* ImageView+Download.swift */; };
+		52AD10ED240C61B500D29CAD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10EC240C61B500D29CAD /* Router.swift */; };
+		52AD10F5240C670900D29CAD /* NSError+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD10F4240C670900D29CAD /* NSError+Description.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		52AD10E4240C4E1F00D29CAD /* Threading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
 		52AD10E6240C4F3100D29CAD /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		52AD10E8240C50FC00D29CAD /* ImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Download.swift"; sourceTree = "<group>"; };
+		52AD10EC240C61B500D29CAD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		52AD10F4240C670900D29CAD /* NSError+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Description.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		52AD10D2240C2B8D00D29CAD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				52AD10F4240C670900D29CAD /* NSError+Description.swift */,
 				52AD10D3240C2B9D00D29CAD /* UIFont+Bold.swift */,
 				52AD10D5240C2E1500D29CAD /* DurationString.swift */,
 				52AD10E2240C4C9000D29CAD /* NumberFormatter+USCurrency.swift */,
@@ -214,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				52AD10DA240C3ECC00D29CAD /* NetworkManager.swift */,
+				52AD10EC240C61B500D29CAD /* Router.swift */,
 				52AD10E6240C4F3100D29CAD /* ImageCache.swift */,
 				52AD10E8240C50FC00D29CAD /* ImageView+Download.swift */,
 			);
@@ -362,8 +368,10 @@
 				52AD10CB240C21C400D29CAD /* TrackDetailsViewModel.swift in Sources */,
 				52AD10D4240C2B9D00D29CAD /* UIFont+Bold.swift in Sources */,
 				52AD10E9240C50FC00D29CAD /* ImageView+Download.swift in Sources */,
+				52AD10ED240C61B500D29CAD /* Router.swift in Sources */,
 				52AD10E1240C485400D29CAD /* TracksListViewModel.swift in Sources */,
 				5212B182240C07FC0046572A /* AppCoordinator.swift in Sources */,
+				52AD10F5240C670900D29CAD /* NSError+Description.swift in Sources */,
 				52AD10C4240C197C00D29CAD /* TrackDetails.swift in Sources */,
 				52AD10C5240C197C00D29CAD /* TracksResponse.swift in Sources */,
 				52AD10E7240C4F3100D29CAD /* ImageCache.swift in Sources */,

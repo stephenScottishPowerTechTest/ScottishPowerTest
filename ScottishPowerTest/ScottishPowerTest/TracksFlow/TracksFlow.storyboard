@@ -53,7 +53,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QG-Ke-7q2">
+                            <view clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QG-Ke-7q2" customClass="UIImageView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="207"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -124,6 +124,7 @@
                     <connections>
                         <outlet property="artistLabel" destination="jy5-ln-rOy" id="rU2-rd-8ZC"/>
                         <outlet property="durationLabel" destination="R9m-nB-JEd" id="2LW-2B-rXe"/>
+                        <outlet property="imageView" destination="0QG-Ke-7q2" id="sZ3-GR-01z"/>
                         <outlet property="moreDetailsButton" destination="1FU-iY-cmh" id="oNR-KA-JlW"/>
                         <outlet property="releaseDateLabel" destination="SHQ-nw-nHd" id="JtG-jM-AuI"/>
                         <outlet property="stackView" destination="2RN-kB-iA7" id="Bqs-hG-YA4"/>

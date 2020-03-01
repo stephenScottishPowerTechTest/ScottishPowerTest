@@ -8,20 +8,32 @@
 
 import Foundation
 
-typealias NetworkResponse =  (_ response: TracksResponse?, _ error: Error?) -> Void
+typealias NetworkResponseHandler =  (_ response: TracksResponse?, _ error: Error?) -> Void
 
 /*
  In my personal projects I've taken to writing my own network stack rather than use third party libraries.
  This is my goto article on the subject and most of my own stuff is usually architected around this:
  https://medium.com/flawless-app-stories/writing-network-layer-in-swift-protocol-oriented-approach-4fa40ef1f908
- 
- However in the interest of time, I'll simply use this network manager to do the single simple request that we need to perform.
  */
+
+enum NetworkResponse:String {
+    case success
+    case authenticationError = "You need to be authenticated first."
+    case badRequest = "Bad request"
+    case outdated = "The url you requested is outdated."
+    case failed = "Network request failed."
+    case noData = "Response returned with no data to decode."
+    case unableToDecode = "We could not decode the response."
+}
+
+enum Result<String>{
+    case success
+    case failure(String)
+}
 
 class NetworkManager {
     
-    var session = URLSession.shared
-    var task: URLSessionTask?
+    let router = Router()
     
     /*
      Ideally a lot of the gritty details would be abstracted out to a router class and the request would be build up from an EndPoint enum.
@@ -30,67 +42,73 @@ class NetworkManager {
      I'd also abstract out the handling of the http response into smaller functions to be able to be unit tested.
      
      */
-    func requestTrackList(completion: @escaping NetworkResponse) {
-        
-        task?.cancel()
-        //given more time or in a work environment I would handle errors better with a custom type.
+    func requestTrackList(completion: @escaping NetworkResponseHandler) {
+       
         guard let url = URL(string: "https://itunes.apple.com/search?term=rock&media=music") else {
-            completion(nil, NSError(domain: "com.scottishpowerTest.NetworkError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unknown Error"]))
+            
+            completion(nil, NSError.error("Unable to parse URL for track list"))
             return
         }
         
-        task = session.dataTask(with: url) { data, response, error in
+        router.absoluteRequest(url: url) { (data, response, error) in
             
             if error != nil {
                 
-                completion(nil, error)
-                return
+                completion(nil, NSError.error("Please check your network connection."))
+            }
+            
+            if let response = response as? HTTPURLResponse {
                 
-            } else {
+                let result = self.handleNetworkResponse(response)
                 
-                if let httpResponse = response as? HTTPURLResponse, let data = data {
+                switch result {
                     
-                    if httpResponse.statusCode == 200 {
+                case .success:
+                    
+                    guard let responseData = data else {
                         
-                        let decoder = JSONDecoder()
-                        decoder.dateDecodingStrategy = .iso8601
-                        
-                        do {
-                            
-                            let tracksResponse = try decoder.decode(TracksResponse.self, from: data)
-                            
-                            completion(tracksResponse, nil)
-                            return
-                            
-                        } catch {
-                            
-                            completion(nil, NSError(domain: "com.scottishpowerTest.NetworkError",
-                                                    code: -1,
-                                                    userInfo: [NSLocalizedDescriptionKey: "Error decoding data)"]))
-                            return
-                        }
-                        
-                        
-                        
-                    } else {
-                        
-                        completion(nil, NSError(domain: "com.scottishpowerTest.NetworkError",
-                                                code: -1,
-                                                userInfo: [NSLocalizedDescriptionKey: "Status code \(httpResponse.statusCode)"]))
+                        completion(nil, NSError.error(NetworkResponse.noData.rawValue))
                         return
                     }
                     
-                } else {
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
                     
-                    completion(nil, NSError(domain: "com.scottishpowerTest.NetworkError",
-                                            code: -1,
-                                            userInfo: [NSLocalizedDescriptionKey: "Invalid HTTP response"]))
-                    return
+                    do {
+                        
+                        let tracksResponse = try decoder.decode(TracksResponse.self, from: responseData)
+                        completion(tracksResponse, nil)
+                        return
+                        
+                    } catch {
+                        
+                        completion(nil, NSError(domain: "com.scottishpowerTest.NetworkError",
+                                                code: -1,
+                                                userInfo: [NSLocalizedDescriptionKey: "Error decoding data)"]))
+                        return
+                    }
+                    
+                    
+                case .failure(let networkFailureError):
+                    
+                    completion(nil, NSError.error(networkFailureError))
                 }
             }
         }
+    }
+    
+    private func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String> {
         
-        task?.resume()
-        
+        switch response.statusCode {
+            
+        case 200...299: return .success
+        case 401...500: return .failure(NetworkResponse.authenticationError.rawValue)
+        case 501...599: return .failure(NetworkResponse.badRequest.rawValue)
+        case 600: return .failure(NetworkResponse.outdated.rawValue)
+        default: return .failure(NetworkResponse.failed.rawValue)
+            
+        }
     }
 }
+
+
