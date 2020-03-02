@@ -68,6 +68,12 @@ class TrackDetailsViewController: UIViewController, CoordinatedViewController {
         self.backButton.layer.masksToBounds = true
         self.backButton.layer.cornerRadius = 8.0
         self.backButton.backgroundColor = UIColor(white: 0.4, alpha: 0.1)
+        
+        if #available(iOS 13.0, *) {
+            self.backButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        } else {
+            self.backButton.setTitle("<", for: .normal) //a hack to go back on older devices. Ideally I'd have an asset here rather than SFSymbol
+        }
     }
     
     @IBAction private func backTapped(_ sender: Any) {
